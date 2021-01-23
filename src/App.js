@@ -1,5 +1,5 @@
 import React from 'react';
-import DatePicker from './Datepicker';
+import DatePicker from './components/DatePicker';
 
 class App extends React.Component {
   constructor(props) {
@@ -13,8 +13,10 @@ class App extends React.Component {
   render(){
     return(
       <DatePicker
-        selected={this.state.date}
-        onChange={(date)=>this.setState({date: date})}      
+        value={this.state.date}
+        onChange={(date)=>this.setState({date: date})}   
+        isMobi={false}
+        isRange={false}
       />
     );
   }
