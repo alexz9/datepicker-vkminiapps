@@ -1,4 +1,5 @@
 import React from 'react';
+import {Button} from '@vkontakte/vkui';
 import Month from './Month';
 import toDate from '../utils/toDate';
 import dateToString from '../utils/dateToString';
@@ -9,13 +10,13 @@ class Calendar extends React.Component {
   constructor(props) {
     super(props);
     this.refContainer = React.createRef();
-    this.isStartRange = true;
+    this.isStartDate = true;
 
     this.state = {
-      startRange: props.startRange,
-      endRange: props.endRange,
-      startRangeInput: '',
-      endRangeInput: '',
+      startDate: props.startDate,
+      endDate: props.endDate,
+      startDateInput: props.startDate ? dateToString(props.startDate) : '',
+      endDateInput: props.endDate ? dateToString(props.endDate) : '',
       stepMonth: 0
     }
   }
@@ -23,30 +24,38 @@ class Calendar extends React.Component {
   changeDate = (day, month, year)=>{
     const date = toDate(`${day}.${month}.${year}`);
 
-    if(this.isStartRange){
+    if(this.isStartDate){
       this.setState({
-        startRange: date, 
-        startRangeInput: dateToString(date),
-        endRange: null,
-        endRangeInput: ''
+        startDate: date, 
+        startDateInput: dateToString(date),
+        endDate: null,
+        endDateInput: ''
       });
-    }else if(date < this.state.startRange){
+    }else if(date < this.state.startDate){
       this.setState({
-        startRange: date,
-        endRange: this.state.startRange,
-        startRangeInput: dateToString(date),
-        endRangeInput: this.state.startRangeInput      
+        startDate: date,
+        endDate: this.state.startDate,
+        startDateInput: dateToString(date),
+        endDateInput: this.state.startDateInput      
       });
     }else{
       this.setState({
-        endRange: date,
-        endRangeInput: dateToString(date)
+        endDate: date,
+        endDateInput: dateToString(date)
       });
     }
 
-    this.isStartRange = !this.isStartRange;
+    this.isStartDate = !this.isStartDate;
   }
+  onChange = (infinity)=>{
+    if(!infinity && (!this.state.startDate || !this.state.endDate)) return;
 
+    if(infinity) this.props.onChange(null);
+    else this.props.onChange({start: this.state.startDate, end: this.state.endDate});
+
+    this.props.onClose();
+    
+  }
   handleClickOutside = (e) => {
     if (this.refContainer.current && !this.refContainer.current.contains(e.target)) this.props.onClose();
   }
@@ -60,28 +69,28 @@ class Calendar extends React.Component {
   render() {
     return (
       <div className="DatePicker" ref={this.refContainer}>
-        <div className="rdrCalendarWrapper rdrDateRangeWrapper">
+        <div className="rdrCalendarWrapper rdrDateDateWrapper">
           <div className="DatePicker__panel">
             <button type="button" className="Panel__arrow--minus" onClick={() => this.setState({stepMonth: this.state.stepMonth - 1})}></button>
             <div className="Inputs">
-              <input className="Inputs__input" value={this.state.startRangeInput} onChange={() => {}} onBlur={() => {}} placeholder="дд.мм.гггг" />
+              <input className="Inputs__input" value={this.state.startDateInput} onChange={() => {}} onBlur={() => {}} placeholder="дд.мм.гггг" />
               <span className="Inputs__delimiter"></span>
-              <input className="Inputs__input" value={this.state.endRangeInput} onChange={() => {}} onBlur={() => {}} placeholder="дд.мм.гггг" />
+              <input className="Inputs__input" value={this.state.endDateInput} onChange={() => {}} onBlur={() => {}} placeholder="дд.мм.гггг" />
             </div>
             <button type="button" className="Panel__arrow--plus" onClick={() => this.setState({stepMonth: this.state.stepMonth + 1})}></button>
           </div>
           <div className="rdrMonths rdrMonthsHorizontal">
             <Month 
               step={this.state.stepMonth}
-              startRange={this.state.startRange}
-              endRange={this.state.endRange}
+              startDate={this.state.startDate}
+              endDate={this.state.endDate}
               changeDate={this.changeDate}
             />
           </div>
         </div>
         <div className="DatePicker__footer">
-          <button level="secondary" align="left" size="m" onClick={() => {}}>Бессрочно</button>
-          <button level="primary" align="right" size="m" onClick={() => {}}>Применить</button>
+          <Button level="secondary" align="left" size="m" onClick={()=>this.onChange(true)}>Бессрочно</Button>                
+          <Button  level="primary" align="right" size="m" onClick={()=>this.onChange()}>Применить</Button>
         </div>
       </div>
     );

@@ -7,7 +7,7 @@ const MONTH_FULL_NAMES = ['Январь', 'Февраль', 'Март', 'Апр�
 
 class Month extends React.Component {
   render() {
-    const calendar = getCalendar(this.props.step, this.props.startRange, this.props.endRange);
+    const calendar = getCalendar(this.props.step, this.props.startDate, this.props.endDate);
 
     return (
       <div className="rdrMonth">

@@ -1,4 +1,4 @@
-// аргумент date ожидается как Objcet Date
+// аргумент date ожидается как Objeсt Date
 function dateToString(date) {
   let d = new Date(date.getTime());
 
