@@ -1,0 +1,263 @@
+:root{
+  
+}
+
+.DatePicker {
+  position: absolute;
+  top: 20px;
+  display: -ms-flexbox;
+  display: flex;   
+  padding-bottom: 57px;
+  border-radius: 4px;
+  border: 1px solid #ebecef;
+  background: #fff;
+  z-index: 1000;
+  box-shadow: 0 4px 10px 2px rgba(0, 0, 0, .08);
+  font-family: Arial;
+}
+.StaticRanges {
+  min-width: 185px;
+  padding: 0;
+  margin: 0;
+  border-right: 1px solid var(--background_light);
+}
+
+.StaticRanges__item:first-of-type {
+  margin-top: 5px;
+}
+
+.StaticRanges__label:hover {
+  background-color: var(--background_highlighted);
+}
+
+.StaticRanges__item {
+  list-style: none;
+  cursor: pointer;
+  padding: 0;
+}
+.StaticRanges__radio {
+  display: none;
+}
+.StaticRanges__label {
+  display: -ms-flexbox;
+  display: flex;    
+  font-size: 12.5px;
+  color: #2a5885;
+  position: relative;
+  padding: 7px 20px 7px 27px;
+  cursor: inherit;
+}
+.rdrCalendarWrapper {    
+  font-size: 12px;
+}
+.DatePicker__panel {
+  position: relative;
+  border-bottom: 1px solid #ebecef;
+  padding: 12px 20px;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -ms-flex-align: center;
+  align-items: center;
+}
+.Panel__arrow--minus,
+.Panel__arrow--plus {
+  position: absolute;
+  bottom: -43px;
+  padding: 20px 19px;
+  border: none;
+  cursor: pointer;    
+  background-repeat: no-repeat;
+  background-position: 50%;
+  background-size: 50%;
+  background-color: #fff;
+  opacity: 0.8;
+  outline: none;
+}
+.Panel__arrow--minus {
+  left: 0px;
+  background-image: url(../img/arrow-left.svg);        
+}
+.Panel__arrow--plus {
+  right: 0px;  
+  background-image: url(../img/arrow-rigth.svg);
+}
+.Panel__arrow--minus:hover,
+.Panel__arrow--plus:hover {
+  opacity: 1;
+}
+.Inputs {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+}
+.Inputs__label {
+  color:  #656565;
+  margin-right: 10px;
+  font-size: 12.5px;
+}
+.Inputs__input--focused,
+.Inputs__input:focus {
+  border: 1px solid #5181b8;
+  box-shadow: 0 0 0 1px #5181b8;
+  outline: none;
+}
+
+.Inputs__input {
+  width: 100px;
+  padding: 5px 10px;
+  margin: 0 5px;
+  border: 1px solid #d3d9de;
+  border-radius: 5px;
+  font-size: 13px;
+  box-sizing: border-box;
+}
+.Inputs__delimiter {
+  display: inline-block;
+  width: 7px;
+  height: 1px;
+  background: #000;
+}
+.rdrMonthsHorizontal {
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+.rdrMonths {
+  display: -ms-flexbox;
+  display: flex;
+  justify-content: center;
+  margin: 14px 12px 12px;
+}
+/* .rdrMonth:first-of-type {
+  margin-right: 20px;
+} */
+
+.rdrMonth {
+  width: 224px;
+}
+.rdrMonthName {
+  font-weight: 500;
+  font-size: 14px;    
+  text-align: center;
+  margin-bottom: 12px;
+}
+.rdrWeekDays {
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 4px;
+  font-size: 10px;
+}
+.rdrWeekDay {
+  -ms-flex-preferred-size: calc(14.28571429%);
+  flex-basis: calc(14.28571429%);
+  box-sizing: inherit;
+  text-align: center;    
+}
+.rdrDays,
+.rdrDay {
+  -o-transition: color;
+  transition: color;    
+}
+
+.rdrDays {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  font-size: 12px;
+}
+.rdrDayPassive {
+  visibility: hidden;
+}
+.rdrDay {
+  background: #fff;
+  box-sizing: inherit;
+  width: calc(14.28571429%);
+  height: calc(14.28571429%);
+  position: relative;
+  font: inherit;
+  cursor: pointer;
+  outline: none;
+}
+.rdrDay {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  border: 0;
+  padding: 0;
+  height: 32px;
+  text-align: center;
+}
+
+.rdrDay:hover {
+  background-color: #e3ebf3;;
+}
+.rdrDayToday .rdrDayNumber span {
+  font-weight: 600;
+  color: #3b70ac;    
+}
+.rdrDayNumber {
+  outline: 0;
+  font-weight: 300;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 5px;
+  bottom: 5px;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  color: #000;
+}
+.rdrDayNumber span {    
+  font-weight: 400;
+}
+.rdrDayDisabled span {
+  color: #b2b2b2;
+}
+.rdrEndEdge,
+.rdrInRange,
+.rdrSelected,
+.rdrStartEdge,
+.rdrDayEndPreview,
+.rdrDayInPreview,
+.rdrDayStartPreview {
+  background-color: #99cfff3b;
+  display: block;
+  height: 32px;
+  width: 32px;
+}
+.rdrDayEndPreview,
+.rdrDayStartPreview,
+.rdrDay:hover .rdrInRange {
+  background-color: #99cfff3b;
+}
+.rdrEndEdge,
+.rdrStartEdge {
+  background-color: #5181b8;
+}
+.rdrEndEdge ~ .rdrDayNumber span,
+.rdrStartEdge ~ .rdrDayNumber span {
+  color: #fff;
+}
+.DatePicker__footer {
+  position: absolute;
+  bottom: 0;
+  box-sizing: border-box;
+  height: 58px;
+  width: 100%;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: end;
+  justify-content: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-top: 1px solid #ebecef;   
+}
