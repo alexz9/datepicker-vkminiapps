@@ -11,7 +11,7 @@ function toDate(arg){
   if(typeof arg === 'string'){
     const d = arg.split('.');
     if(d.length === 3 && d[2].length === 4){
-      return new Date(Number(d[2]), Number(d[1]), Number(d[0]));
+      return new Date(Number(d[2]), Number(d[1]) - 1, Number(d[0]));
     }
   }
   

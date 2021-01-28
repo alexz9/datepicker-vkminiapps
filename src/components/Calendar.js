@@ -2,9 +2,8 @@ import React from 'react';
 import {Button} from '@vkontakte/vkui';
 import Month from './Month';
 import toDate from '../utils/toDate';
+import isValidDate from '../utils/isValidDate';
 import dateToString from '../utils/dateToString';
-
-const REG_IS_DATE = /^\s*(3[01]|[12][0-9]|0?[1-9])\.(1[012]|0?[1-9])\.((?:19|20)\d{2})\s*$/g;
 
 class Calendar extends React.Component {
   constructor(props) {
@@ -21,8 +20,17 @@ class Calendar extends React.Component {
     }
   }
 
-  changeDate = (day, month, year)=>{
-    const date = toDate(`${day}.${month}.${year}`);
+  changeInput = (e)=>{
+    this.setState({[e.target.name]: e.target.value});
+    
+    if(!isValidDate(e.target.value)) return;
+    
+    if(e.target.name === 'startDateInput') this.setState({startDate: toDate(e.target.value)});
+    else this.setState({endDate: toDate(e.target.value)});
+  }
+
+  changeCalendar = (day, month, year)=>{
+    const date = toDate(`${day}.${month + 1}.${year}`);
 
     if(this.isStartDate){
       this.setState({
@@ -47,15 +55,18 @@ class Calendar extends React.Component {
 
     this.isStartDate = !this.isStartDate;
   }
+
   onChange = (infinity)=>{
-    if(!infinity && (!this.state.startDate || !this.state.endDate)) return;
+    const {startDate, endDate} = this.state;
+    if(!infinity && (!startDate || !endDate)) return;
 
     if(infinity) this.props.onChange(null);
-    else this.props.onChange({start: this.state.startDate, end: this.state.endDate});
+    else if(startDate > endDate) this.props.onChange({start: endDate, end: startDate});
+    else this.props.onChange({start: startDate, end: endDate});
 
-    this.props.onClose();
-    
+    this.props.onClose();    
   }
+
   handleClickOutside = (e) => {
     if (this.refContainer.current && !this.refContainer.current.contains(e.target)) this.props.onClose();
   }
@@ -73,9 +84,9 @@ class Calendar extends React.Component {
           <div className="DatePicker__panel">
             <button type="button" className="Panel__arrow--minus" onClick={() => this.setState({stepMonth: this.state.stepMonth - 1})}></button>
             <div className="Inputs">
-              <input className="Inputs__input" value={this.state.startDateInput} onChange={() => {}} onBlur={() => {}} placeholder="дд.мм.гггг" />
+              <input className="Inputs__input" value={this.state.startDateInput} name="startDateInput" onChange={this.changeInput} placeholder="дд.мм.гггг" />
               <span className="Inputs__delimiter"></span>
-              <input className="Inputs__input" value={this.state.endDateInput} onChange={() => {}} onBlur={() => {}} placeholder="дд.мм.гггг" />
+              <input className="Inputs__input" value={this.state.endDateInput} name="endDateInput" onChange={this.changeInput} placeholder="дд.мм.гггг" />
             </div>
             <button type="button" className="Panel__arrow--plus" onClick={() => this.setState({stepMonth: this.state.stepMonth + 1})}></button>
           </div>
@@ -84,7 +95,7 @@ class Calendar extends React.Component {
               step={this.state.stepMonth}
               startDate={this.state.startDate}
               endDate={this.state.endDate}
-              changeDate={this.changeDate}
+              changeDate={this.changeCalendar}
             />
           </div>
         </div>
