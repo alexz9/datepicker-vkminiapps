@@ -8,10 +8,9 @@ const MONTH_FULL_NAMES = ['Январь', 'Февраль', 'Март', 'Апр�
 class Month extends React.Component {
   render() {
     const calendar = getCalendar(this.props.step, this.props.startDate, this.props.endDate);
-
     return (
       <div className="rdrMonth">
-        <div className="rdrMonthName">{MONTH_FULL_NAMES[calendar.month]}</div>
+        <div className="rdrMonthName">{`${MONTH_FULL_NAMES[calendar.month]} ${calendar.year}`}</div>
         <div className="rdrWeekDays">
           <span className="rdrWeekDay">пн</span>
           <span className="rdrWeekDay">вт</span>

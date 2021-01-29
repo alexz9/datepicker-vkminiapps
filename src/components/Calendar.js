@@ -4,6 +4,7 @@ import Month from './Month';
 import toDate from '../utils/toDate';
 import isValidDate from '../utils/isValidDate';
 import dateToString from '../utils/dateToString';
+import getMonthForCalendar from '../utils/getMonthForCalendar';
 
 class Calendar extends React.Component {
   constructor(props) {
@@ -16,7 +17,7 @@ class Calendar extends React.Component {
       endDate: props.endDate,
       startDateInput: props.startDate ? dateToString(props.startDate) : '',
       endDateInput: props.endDate ? dateToString(props.endDate) : '',
-      stepMonth: 0
+      stepMonth: getMonthForCalendar(props.startDate, props.endDate)
     }
   }
 

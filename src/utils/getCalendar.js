@@ -1,12 +1,11 @@
 export default function getCalendar(step, startRange, endRange) {
-  console.log(step, startRange, endRange);
+  const nowDate = new Date();
+  nowDate.setHours(0, 0, 0, 0);
 
-  const nowDate = new Date(),
-    nowMonth = nowDate.getMonth();
+  let viewDate = new Date();
 
-  const viewDate = new Date();
+  viewDate.setMonth(step, 1);  
   viewDate.setHours(0, 0, 0, 0);
-  viewDate.setMonth(nowMonth + step);
 
   const viewYear = viewDate.getFullYear(),
     viewMonth = viewDate.getMonth();
@@ -30,7 +29,7 @@ export default function getCalendar(step, startRange, endRange) {
     days.push({
       value: val,
       status: start === unixtime ? 'start' : end === unixtime ? 'end' : start < unixtime && end > unixtime ? 'inRange' : 'notSelected',
-      isToday: (viewDate.getTime() === unixtime)
+      isToday: (nowDate.getTime() === unixtime)
     });      
     
   }
