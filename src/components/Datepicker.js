@@ -31,6 +31,7 @@ class DatePicker extends React.Component {
             startDate={startDate}
             endDate={endDate}
             onChange={this.props.onChange}
+            isMobi={this.props.isMobi}
           />
         }
       </div>

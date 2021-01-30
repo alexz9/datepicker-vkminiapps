@@ -1,6 +1,5 @@
-.DatePicker {
+.DatePicker, .DatePicker--mobi {  
   position: absolute;
-  top: 20px;
   display: -ms-flexbox;
   display: flex;   
   padding-bottom: 57px;
@@ -10,6 +9,17 @@
   z-index: 1000;
   box-shadow: 0 4px 10px 2px rgba(0, 0, 0, .08);
   font-family: Arial;
+}
+.DatePicker {
+  max-width: 264px;
+  top: 20px;
+}
+.DatePicker--mobi {
+  width: 90%;
+  max-width: 400px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
 }
 .StaticRanges {
   min-width: 185px;
@@ -49,7 +59,7 @@
 .DatePicker__panel {
   position: relative;
   border-bottom: 1px solid var(--background_highlighted);
-  padding: 12px 20px;
+  padding: 12px;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-pack: justify;
@@ -61,15 +71,20 @@
 .Panel__arrow--plus {
   position: absolute;
   bottom: -43px;
-  padding: 20px 19px;
+  padding: 20px 25px;
   border: none;
   cursor: pointer;    
   background-repeat: no-repeat;
   background-position: 50%;
   background-size: 50%;
   background-color: var(--background_content);
-  opacity: 0.8;
+  opacity: 0.6;
   outline: none;
+}
+
+.DatePicker--mobi .Panel__arrow--minus,
+.DatePicker--mobi .Panel__arrow--plus{
+  background-size: 80%;
 }
 .Panel__arrow--minus {
   left: 0px;
@@ -94,27 +109,22 @@
   margin-right: 10px;
   font-size: 12.5px;
 }
-.Inputs__input--focused,
+/* .Inputs__input--focused,
 .Inputs__input:focus {
   border: 1px solid #5181b8;
   box-shadow: 0 0 0 1px #5181b8;
   outline: none;
-}
+} */
 
 .Inputs__input {
-  width: 100px;
-  padding: 5px 10px;
+  width: 50%;
   margin: 0 5px;
-  border: 1px solid #d3d9de;
-  border-radius: 5px;
-  font-size: 13px;
-  box-sizing: border-box;
 }
 .Inputs__delimiter {
   display: inline-block;
   width: 7px;
   height: 1px;
-  background: #000;
+  background: var(--text_primary);
 }
 .rdrMonthsHorizontal {
   -ms-flex-direction: row;
@@ -132,20 +142,33 @@
 } */
 
 .rdrMonth {
-  width: 224px;
+  width: 100%;
 }
 .rdrMonthName {
-  font-weight: 500;
-  font-size: 14px;    
+  font-weight: 500;   
   text-align: center;
   margin-bottom: 12px;
 }
+.DatePicker .rdrMonthName{
+  font-size: 14px; 
+}
+.DatePicker--mobi .rdrMonthName{
+  font-size: 18px; 
+}
+
 .rdrWeekDays {
   display: -ms-flexbox;
   display: flex;
   margin-bottom: 4px;
   font-size: 10px;
 }
+
+.DatePicker--mobi .rdrWeekDays{
+  font-size: 13px;
+  font-weight: 900;
+  opacity: 0.4;
+}
+
 .rdrWeekDay {
   -ms-flex-preferred-size: calc(14.28571429%);
   flex-basis: calc(14.28571429%);
@@ -164,6 +187,10 @@
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   font-size: 12px;
+}
+
+.DatePicker--mobi .rdrDays{
+  font-size: 14px;
 }
 .rdrDayPassive {
   visibility: hidden;
@@ -184,9 +211,12 @@
   -ms-user-select: none;
   user-select: none;
   border: 0;
-  padding: 0;
-  height: 32px;
+  padding: 0;  
   text-align: center;
+  height: 32px;
+}
+.DatePicker--mobi .rdrDay{
+  height: 54px;
 }
 
 .rdrDay:hover {
@@ -227,8 +257,7 @@
 .rdrDayStartPreview {
   background-color: var(--background_highlighted);
   display: block;
-  height: 32px;
-  width: 32px;
+  height: 100%;
 }
 .rdrDayEndPreview,
 .rdrDayStartPreview,
@@ -255,6 +284,17 @@
   justify-content: space-around;
   -ms-flex-align: center;
   align-items: center;
-  border-top: 1px solid #ebecef; 
+  border-top: 1px solid var(--background_highlighted); 
   padding: 0 12px;  
+}
+
+.DatePicker__footer button:first-of-type{
+  margin-right: 10px;
+}
+
+/* vkui change for my props isMobi=false */
+.DatePicker .Input__el{
+  height: auto;
+  padding: 6px 12px;
+  font-size: 14px;
 }

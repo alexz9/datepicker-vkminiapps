@@ -1,5 +1,5 @@
 import React from 'react';
-import {Button} from '@vkontakte/vkui';
+import { Button, Input} from '@vkontakte/vkui';
 import Month from './Month';
 import toDate from '../utils/toDate';
 import isValidDate from '../utils/isValidDate';
@@ -80,14 +80,14 @@ class Calendar extends React.Component {
   }
   render() {
     return (
-      <div className="DatePicker" ref={this.refContainer}>
+      <div className={`DatePicker${this.props.isMobi ? "--mobi" : ""}`} ref={this.refContainer}>
         <div className="rdrCalendarWrapper rdrDateDateWrapper">
           <div className="DatePicker__panel">
             <button type="button" className="Panel__arrow--minus" onClick={() => this.setState({stepMonth: this.state.stepMonth - 1})}></button>
             <div className="Inputs">
-              <input className="Inputs__input" value={this.state.startDateInput} name="startDateInput" onChange={this.changeInput} placeholder="дд.мм.гггг" />
+              <Input type="text" className="Inputs__input" value={this.state.startDateInput} name="startDateInput" onChange={this.changeInput} placeholder="дд.мм.гггг" />
               <span className="Inputs__delimiter"></span>
-              <input className="Inputs__input" value={this.state.endDateInput} name="endDateInput" onChange={this.changeInput} placeholder="дд.мм.гггг" />
+              <Input type="text" className="Inputs__input" value={this.state.endDateInput} name="endDateInput" onChange={this.changeInput} placeholder="дд.мм.гггг" />
             </div>
             <button type="button" className="Panel__arrow--plus" onClick={() => this.setState({stepMonth: this.state.stepMonth + 1})}></button>
           </div>
@@ -101,8 +101,8 @@ class Calendar extends React.Component {
           </div>
         </div>
         <div className="DatePicker__footer">
-          <Button level="secondary" align="left" size="m" onClick={()=>this.onChange(true)}>Бессрочно</Button>                
-          <Button  level="primary" align="right" size="m" onClick={()=>this.onChange()}>Применить</Button>
+          <Button level="secondary" size="l" stretched onClick={()=>this.onChange(true)}>Бессрочно</Button>                
+          <Button  level="primary" size="l" stretched onClick={()=>this.onChange()}>Применить</Button>
         </div>
       </div>
     );

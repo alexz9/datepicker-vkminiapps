@@ -18,7 +18,7 @@ class App extends React.Component {
       <DatePicker
         value={this.state.date}
         onChange={this.onChange}   
-        isMobi={false}
+        isMobi={true}
       />
     );
   }
