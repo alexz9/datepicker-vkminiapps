@@ -1,5 +1,6 @@
 import React from 'react';
 import { Button } from '@vkontakte/vkui';
+import Icon56EventOutline from '@vkontakte/icons/dist/56/event_outline';
 import Calendar from './Calendar';
 import toDate from '../utils/toDate';
 import isValidDate from '../utils/isValidDate';
@@ -16,14 +17,23 @@ class DatePicker extends React.Component {
   }
 
   render() {
-    const { value } = this.props,
-      startDate = value && typeof value === 'object' && isValidDate(value.start) ? toDate(value.start) : null,
-      endDate = value && typeof value === 'object' && isValidDate(value.end) ? toDate(value.end) : null;
+    const { value, isRange } = this.props,
+      startDate = isRange && value && typeof value === 'object' && isValidDate(value.start) ? toDate(value.start) : !isRange && isValidDate(value) ? toDate(value) :  null,
+      endDate = isRange && value && typeof value === 'object' && isValidDate(value.end) ? toDate(value.end) : null;
 
     return (
       <div>
-        <Button onClick={()=>this.setState({isOpen: true})}>
-          {startDate && endDate ? `${startDate.getDate()} ${MONTH_NAMES[startDate.getMonth()]} - ${endDate.getDate()} ${MONTH_NAMES[endDate.getMonth()]}` : 'Бессрочно' }
+        <Button 
+          level="secondary" 
+          size="m" 
+          onClick={()=>this.setState({isOpen: true})} 
+          before={<Icon56EventOutline width={24} height={24}/>} 
+        >
+          {startDate && endDate 
+            ? `${startDate.getDate()} ${MONTH_NAMES[startDate.getMonth()]} - ${endDate.getDate()} ${MONTH_NAMES[endDate.getMonth()]}` 
+            : startDate 
+            ? `${startDate.getDate()} ${MONTH_NAMES[startDate.getMonth()]} ${startDate.getFullYear()}`
+            : 'Бессрочно' }
         </Button>
         {this.state.isOpen &&
           <Calendar 
@@ -32,6 +42,7 @@ class DatePicker extends React.Component {
             endDate={endDate}
             onChange={this.props.onChange}
             isMobi={this.props.isMobi}
+            isRange={this.props.isRange}
           />
         }
       </div>
