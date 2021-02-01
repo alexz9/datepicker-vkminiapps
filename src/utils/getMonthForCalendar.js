@@ -1,4 +1,4 @@
-// возвращает сдвиг месяца для первичного отображения календаря в рамках выбранного диапазона
+// возвращает сдвиг месяца от текущего для дальнейшей навигации
 function getMonthForCalendar(start, end, isRange){
   let nowDate = new Date(), 
     month = nowDate.getMonth();

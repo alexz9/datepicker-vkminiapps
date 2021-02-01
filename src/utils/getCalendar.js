@@ -10,8 +10,9 @@ export default function getCalendar(step, startRange, endRange) {
   const viewYear = viewDate.getFullYear(),
     viewMonth = viewDate.getMonth();
 
-  const lastDayInMonth = new Date(viewYear, viewMonth + 1, 0).getDate(),
+  let lastDayInMonth = new Date(viewYear, viewMonth + 1, 0).getDate(),
     beginInWeek = new Date(viewYear, viewMonth, 1).getDay();
+  if(beginInWeek === 0) beginInWeek = 7;
 
   let days = [];
   for (let i = 1; i < lastDayInMonth + beginInWeek; i++) {    
