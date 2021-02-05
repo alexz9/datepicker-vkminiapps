@@ -2,8 +2,6 @@ export default function getCalendar(step, startRange, endRange) {
   const nowDate = new Date();
   nowDate.setHours(0, 0, 0, 0);
 
-  if(!isFinite(step)) step = nowDate.getMonth();
-
   let viewDate = new Date();
 
   viewDate.setMonth(step, 1);  
