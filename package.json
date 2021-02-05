@@ -1,7 +1,7 @@
 {
   "name": "datepicker-vkminiapps",
   "version": "1.0.2",
-  "main": "lib/index.js",
+  "main": "dist/index.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/alexz9/datepicker-vkminiapps.git"
@@ -29,8 +29,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "lib": "babel -d lib/ src/",
-    "prepublish": "npm run lib"
+    "babel": "babel src/ --out-dir dist/",
+    "prepublish": "npm run babel"
   },
   "eslintConfig": {
     "extends": [

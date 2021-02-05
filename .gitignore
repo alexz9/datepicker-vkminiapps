@@ -12,8 +12,9 @@
 # production
 /build
 
-#lib for npm
+# for npm
 /lib
+/dist
 
 # misc
 .DS_Store
