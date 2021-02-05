@@ -1,4 +1,5 @@
 // возвращает сдвиг месяца от текущего для дальнейшей навигации
+// ожидает start и end в качестве либо объекта Date, либо undefined
 function getMonthForCalendar(start, end, isRange){
   let nowDate = new Date(), 
     month = nowDate.getMonth();
