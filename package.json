@@ -11,6 +11,7 @@
     "url": "https://github.com/alexz9/datepicker-vkminiapps/issues"
   },
   "homepage": "https://github.com/alexz9/datepicker-vkminiapps#readme",
+  "main": "src/index.js",
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.9",
     "@testing-library/react": "^11.2.3",
