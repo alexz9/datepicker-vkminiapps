@@ -1,7 +1,16 @@
 {
-  "name": "datepicker",
-  "version": "0.1.0",
-  "private": true,
+  "name": "datepicker-vkminiapps",
+  "version": "1.0.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alexz9/datepicker-vkminiapps.git"
+  },
+  "author": "alex.z-9@ya.ru",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/alexz9/datepicker-vkminiapps/issues"
+  },
+  "homepage": "https://github.com/alexz9/datepicker-vkminiapps#readme",
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.9",
     "@testing-library/react": "^11.2.3",
