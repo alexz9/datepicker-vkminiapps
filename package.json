@@ -1,6 +1,7 @@
 {
   "name": "datepicker-vkminiapps",
   "version": "1.0.0",
+  "main": "src/index.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/alexz9/datepicker-vkminiapps.git"
