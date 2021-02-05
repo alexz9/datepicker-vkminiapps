@@ -11,7 +11,7 @@
   "bugs": {
     "url": "https://github.com/alexz9/datepicker-vkminiapps/issues"
   },
-  "homepage": "https://github.com/alexz9/datepicker-vkminiapps#readme",
+  "homepage": "/",
   "dependencies": {
     "@babel/core": "7.12.3",
     "@pmmmwh/react-refresh-webpack-plugin": "0.4.2",
