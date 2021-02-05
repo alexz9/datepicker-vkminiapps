@@ -1,7 +1,7 @@
 {
   "name": "datepicker-vkminiapps",
   "version": "1.0.1",
-  "main": "src/index.js",
+  "main": "lib/index.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/alexz9/datepicker-vkminiapps.git"
@@ -11,7 +11,6 @@
   "bugs": {
     "url": "https://github.com/alexz9/datepicker-vkminiapps/issues"
   },
-  "homepage": "/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.9",
     "@testing-library/react": "^11.2.3",
@@ -29,7 +28,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "lib": "babel -d lib/ src/",
+    "prepublish": "npm run lib"
   },
   "eslintConfig": {
     "extends": [
@@ -48,5 +49,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.12.13"
   }
 }
