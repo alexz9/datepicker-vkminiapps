@@ -1,6 +1,8 @@
 import React from 'react';
 import { Button } from '@vkontakte/vkui';
 import Icon56EventOutline from '@vkontakte/icons/dist/56/event_outline';
+import '@vkontakte/vkui/dist/vkui.css';
+
 import Calendar from './Calendar';
 import toDate from '../utils/toDate';
 import isValidDate from '../utils/isValidDate';
