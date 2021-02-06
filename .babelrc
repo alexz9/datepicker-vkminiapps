@@ -9,6 +9,7 @@
     "@babel/plugin-transform-runtime"
   ],
   "ignore": [
-    "./src/App.js"
+    "./src/App.js",
+    "./index.js"
   ]
 }
