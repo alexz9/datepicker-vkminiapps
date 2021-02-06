@@ -1,8 +1,8 @@
 import React from 'react';
-import { Button } from '@vkontakte/vkui';
-import '@vkontakte/vkui/dist/vkui.css';
+//import '@vkontakte/vkui/dist/vkui.css';
 import IconCalendar from './IconCalendar';
 
+import Button from './Button';
 import Calendar from './Calendar';
 import toDate from '../utils/toDate';
 import isValidDate from '../utils/isValidDate';
@@ -26,8 +26,8 @@ class DatePicker extends React.Component {
     return (
       <div>
         <Button 
-          level="secondary" 
-          size="m" 
+          mode="secondary" 
+          size="s" 
           onClick={()=>this.setState({isOpen: true})} 
           before={<IconCalendar/>} 
         >

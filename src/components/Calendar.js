@@ -1,5 +1,6 @@
 import React from 'react';
-import { Button, Input } from '@vkontakte/vkui';
+import Input from './Input';
+import Button from './Button';
 import Month from './Month';
 import toDate from '../utils/toDate';
 import isValidDate from '../utils/isValidDate';
@@ -118,8 +119,8 @@ class Calendar extends React.Component {
         </div>
         {this.props.isRange &&
           <div className="DatePicker__footer">
-            <Button level="secondary" size="l" stretched onClick={() => this.onChange(true)}>Бессрочно</Button>
-            <Button level="primary" size="l" stretched onClick={() => this.onChange()}>Применить</Button>
+            <Button mode="secondary" size={this.props.isMobi ? "m" : "s"} stretched onClick={() => this.onChange(true)}>Бессрочно</Button>
+            <Button mode="primary" size={this.props.isMobi ? "m" : "s"} stretched onClick={() => this.onChange()}>Применить</Button>
           </div>
         }
       </div>
