@@ -1,3 +1,38 @@
+:root .DatePicker__container[theme="dark"]{
+  --background_light: #232324;
+  --background_content: #19191a;
+  --background_highlighted: rgba(255, 255, 255, 0.08);
+  --text_primary: #e1e3e6;
+  --text_secondary: #76787a;
+  --accent: #71aaeb;
+  --background_hover: rgba(255, 255, 255, 0.04);
+  --button_primary_background: #e1e3e6;
+  --button_primary_foreground: #19191a;
+  --button_secondary_background: #454647;
+  --button_secondary_foreground: #e1e3e6;
+  --field_border: rgba(255, 255, 255, 0.12);
+  --field_background: #232324;
+  --icon_tertiary_alpha: rgba(255, 255, 255, 0.24);
+  --field_text_placeholder: #76787a;
+}
+:root .DatePicker__container[theme="light"]{
+  --background_light: #f9f9f9;
+  --background_content: #fff;  
+  --background_highlighted: rgba(0, 0, 0, 0.08);
+  --text_primary: #000;
+  --text_secondary: #818c99;
+  --accent: #3f8ae0;
+  --background_hover: rgba(0, 0, 0, 0.04);
+  --button_primary_background: #4986cc;
+  --button_primary_foreground: #fff;
+  --button_secondary_background: rgba(0, 28, 61, 0.05);
+  --button_secondary_foreground: #3f8ae0;
+  --field_border: rgba(0, 0, 0, 0.12);
+  --field_background: #f2f3f5;
+  --icon_tertiary_alpha: rgba(0, 0, 0, 0.24);
+  --field_text_placeholder: #818c99;
+}
+
 .DatePicker, .DatePicker--mobi {  
   position: absolute;
   display: -ms-flexbox;
@@ -111,12 +146,6 @@
   margin-right: 10px;
   font-size: 12.5px;
 }
-/* .Inputs__input--focused,
-.Inputs__input:focus {
-  border: 1px solid #5181b8;
-  box-shadow: 0 0 0 1px #5181b8;
-  outline: none;
-} */
 
 .Inputs__input {
   width: 100%;
@@ -150,6 +179,7 @@
   font-weight: 500;   
   text-align: center;
   margin-bottom: 12px;
+  color: var(--text_primary, #000)
 }
 .DatePicker .rdrMonthName{
   font-size: 14px; 
@@ -163,6 +193,7 @@
   display: flex;
   margin-bottom: 4px;
   font-size: 10px;
+  color: var(--text_primary, #000)
 }
 
 .DatePicker--mobi .rdrWeekDays{
@@ -226,7 +257,7 @@
 }
 .rdrDayToday .rdrDayNumber span {
   font-weight: 600;
-  color: #3b70ac;    
+  color: var(--accent, #5181b8);    
 }
 .rdrDayNumber {
   outline: 0;
@@ -268,7 +299,7 @@
 }
 .rdrEndEdge,
 .rdrStartEdge {
-  background-color: #5181b8;
+  background-color: var(--accent, #5181b8);
 }
 .rdrEndEdge ~ .rdrDayNumber span,
 .rdrStartEdge ~ .rdrDayNumber span {

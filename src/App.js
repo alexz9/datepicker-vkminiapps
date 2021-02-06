@@ -19,6 +19,7 @@ class App extends React.Component {
         onChange={this.onChange}   
         isMobi={true}
         isRange={true}
+        theme={"dark"}
       />
     );
   }

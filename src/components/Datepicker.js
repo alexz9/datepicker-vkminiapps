@@ -1,5 +1,5 @@
 import React from 'react';
-//import '@vkontakte/vkui/dist/vkui.css';
+import '@vkontakte/vkui/dist/vkui.css';
 import IconCalendar from './IconCalendar';
 
 import Button from './Button';
@@ -24,7 +24,7 @@ class DatePicker extends React.Component {
       endDate = isRange && value && typeof value === 'object' && isValidDate(value.end) ? toDate(value.end) : null;
 
     return (
-      <div>
+      <div className="DatePicker__container" theme={this.props.theme}>
         <Button 
           mode="secondary" 
           size="s" 

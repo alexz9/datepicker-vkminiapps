@@ -90,10 +90,15 @@ class Calendar extends React.Component {
   }
   componentDidMount() {
     document.addEventListener('mousedown', this.handleClickOutside, false);
+
   }
   render() {
+
     return (
-      <div className={`DatePicker${this.props.isMobi ? "--mobi" : ""}`} ref={this.refContainer}>
+      <div 
+        className={`DatePicker${this.props.isMobi ? "--mobi" : ""}`} 
+        ref={this.refContainer}
+      >
         <div className="rdrCalendarWrapper rdrDateDateWrapper">
           <div className="DatePicker__panel">
             <button type="button" className="Panel__arrow--minus" onClick={() => this.setState({ stepMonth: this.state.stepMonth - 1 })}></button>
