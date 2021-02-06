@@ -10,6 +10,6 @@
   ],
   "ignore": [
     "./src/App.js",
-    "./index.js"
+    "./src/index.js"
   ]
 }
