@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button } from '@vkontakte/vkui';
-import Icon56EventOutline from '@vkontakte/icons/dist/56/event_outline';
 import '@vkontakte/vkui/dist/vkui.css';
+import IconCalendar from './IconCalendar';
 
 import Calendar from './Calendar';
 import toDate from '../utils/toDate';
@@ -29,7 +29,7 @@ class DatePicker extends React.Component {
           level="secondary" 
           size="m" 
           onClick={()=>this.setState({isOpen: true})} 
-          before={<Icon56EventOutline width={24} height={24}/>} 
+          before={<IconCalendar/>} 
         >
           {startDate && endDate 
             ? `${startDate.getDate()} ${MONTH_NAMES[startDate.getMonth()]} - ${endDate.getDate()} ${MONTH_NAMES[endDate.getMonth()]}` 

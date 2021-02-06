@@ -4,8 +4,8 @@
   display: flex;   
   flex-wrap: wrap;
   border-radius: 4px;
-  border: 1px solid var(--background_light);
-  background: var(--background_content);
+  border: 1px solid var(--background_light, #ebecef);
+  background: var(--background_content, #fff);
   z-index: 1000;
   box-shadow: 0 4px 10px 2px rgba(0, 0, 0, .08);
   font-family: Arial;
@@ -25,7 +25,7 @@
   min-width: 185px;
   padding: 0;
   margin: 0;
-  border-right: 1px solid var(--background_light);
+  border-right: 1px solid var(--background_light, #ebecef);
 }
 
 .StaticRanges__item:first-of-type {
@@ -33,7 +33,7 @@
 }
 
 .StaticRanges__label:hover {
-  background-color: var(--background_highlighted);
+  background-color: var(--background_highlighted, rgb(0 0 0 / 8%));
 }
 
 .StaticRanges__item {
@@ -59,7 +59,7 @@
 }
 .DatePicker__panel {
   position: relative;
-  border-bottom: 1px solid var(--background_highlighted);
+  border-bottom: 1px solid var(--background_highlighted, #ebecef);
   padding: 12px;
   display: -ms-flexbox;
   display: flex;
@@ -78,7 +78,7 @@
   background-repeat: no-repeat;
   background-position: 50%;
   background-size: 50%;
-  background-color: var(--background_content);
+  background-color: var(--background_content, #fff);
   opacity: 0.6;
   outline: none;
 }
@@ -107,7 +107,7 @@
   align-items: center;
 }
 .Inputs__label {
-  color: var(-background_light);
+  color: var(-background_light, #ebecef);
   margin-right: 10px;
   font-size: 12.5px;
 }
@@ -126,7 +126,7 @@
   display: inline-block;
   width: 14px;
   height: 1px;
-  background: var(--text_primary);
+  background: var(--text_primary, #000);
 }
 .rdrMonthsHorizontal {
   -ms-flex-direction: row;
@@ -198,7 +198,7 @@
   visibility: hidden;
 }
 .rdrDay {
-  background: var(--background_content);
+  background: var(--background_content, #fff);
   box-sizing: inherit;
   width: calc(14.28571429%);
   height: calc(14.28571429%);
@@ -222,7 +222,7 @@
 }
 
 .rdrDay:hover {
-  background-color: var(--background_highlighted);
+  background-color: var(--background_highlighted, rgb(0 0 0 / 8%));
 }
 .rdrDayToday .rdrDayNumber span {
   font-weight: 600;
@@ -242,7 +242,7 @@
   align-items: center;
   -ms-flex-pack: center;
   justify-content: center;
-  color: var(--text_primary);
+  color: var(--text_primary, #000);
 }
 .rdrDayNumber span {    
   font-weight: 400;
@@ -257,14 +257,14 @@
 .rdrDayEndPreview,
 .rdrDayInPreview,
 .rdrDayStartPreview {
-  background-color: var(--background_highlighted);
+  background-color: var(--background_highlighted, rgb(0 0 0 / 8%));
   display: block;
   height: 100%;
 }
 .rdrDayEndPreview,
 .rdrDayStartPreview,
 .rdrDay:hover .rdrInRange {
-  background-color: var(--background_highlighted);
+  background-color: var(--background_highlighted, rgb(0 0 0 / 8%));
 }
 .rdrEndEdge,
 .rdrStartEdge {
@@ -272,7 +272,7 @@
 }
 .rdrEndEdge ~ .rdrDayNumber span,
 .rdrStartEdge ~ .rdrDayNumber span {
-  color: var(--background_content);
+  color: var(--background_content, #fff);
 }
 .DatePicker__footer {
   box-sizing: border-box;
@@ -284,7 +284,7 @@
   justify-content: space-around;
   -ms-flex-align: center;
   align-items: center;
-  border-top: 1px solid var(--background_highlighted); 
+  border-top: 1px solid var(--background_highlighted, rgb(0 0 0 / 8%)); 
   padding: 0 12px;  
 }
 

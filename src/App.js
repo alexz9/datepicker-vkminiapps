@@ -1,6 +1,5 @@
 import React from 'react';
 import DatePicker from './components/DatePicker';
-import '@vkontakte/vkui/dist/vkui.css';
 
 class App extends React.Component {
   constructor(props) {
