@@ -37,15 +37,15 @@ class DatePicker extends React.Component {
             ? `${startDate.getDate()} ${MONTH_NAMES[startDate.getMonth()]} ${startDate.getFullYear()}`
             : 'Бессрочно' }
         </Button>
-        {this.state.isOpen && this.props.isMobi && <div className="DatePicker__wrapper"/>}
+        {this.state.isOpen && isMobi && <div className="DatePicker__wrapper"/>}
         {this.state.isOpen &&
           <Calendar 
             onClose={()=>this.setState({isOpen: false})}
             startDate={startDate}
             endDate={endDate}
             onChange={this.props.onChange}
-            isMobi={this.props.isMobi}
-            isRange={this.props.isRange}
+            isMobi={isMobi}
+            isRange={isRange}
           />
         }
       </div>
