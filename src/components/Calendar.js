@@ -111,6 +111,7 @@ class Calendar extends React.Component {
                 onChange={this.changeInput} 
                 placeholder="дд.мм.гггг" 
                 isMobi={this.props.isMobi}
+                autocomplete="off"
               />
               {this.props.isRange &&
                 <React.Fragment>
@@ -123,6 +124,7 @@ class Calendar extends React.Component {
                     onChange={this.changeInput} 
                     placeholder="дд.мм.гггг" 
                     isMobi={this.props.isMobi}
+                    autocomplete="off"
                   />
                 </React.Fragment>
               }

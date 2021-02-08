@@ -38,7 +38,7 @@
 }
 
 .DatePicker, .DatePicker--mobi {  
-  position: fixed;
+  position: absolute;
   display: -ms-flexbox;
   display: flex;   
   flex-wrap: wrap;
@@ -46,14 +46,15 @@
   border: 1px solid var(--background_light, #ebecef);
   background: var(--background_content, #fff);
   z-index: 1000;
-  box-shadow: 0 4px 10px 2px rgba(0, 0, 0, .08);
-  font-family: Arial;
+  box-shadow: 0 4px 10px 3px rgba(0, 0, 0, .10);
+  font-family: Arial, sans-serif;
 }
 .DatePicker {
   width: 264px;
   top: 20px;
 }
 .DatePicker--mobi {
+  position: fixed;
   width: 100%;
   max-width: 400px;
   top: 50%;

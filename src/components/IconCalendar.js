@@ -1,7 +1,7 @@
 import React from 'react';
 
 const IconCalendar = (props) => {
-  const size = props.size === "m" ? "24px" : "20px";
+  const size = props.size === "m" ? "26px" : "22px";
   return (
     <svg width={size} height={size} viewBox="0 0 56 56" version="1.1" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
       <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" >
