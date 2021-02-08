@@ -54,45 +54,14 @@
   top: 20px;
 }
 .DatePicker--mobi {
-  width: 90%;
+  width: 100%;
   max-width: 400px;
   top: 50%;
   left: 50%;
   transform: translate(-50%,-50%);
 }
-.StaticRanges {
-  min-width: 185px;
-  padding: 0;
-  margin: 0;
-  border-right: 1px solid var(--background_light, #ebecef);
-}
 
-.StaticRanges__item:first-of-type {
-  margin-top: 5px;
-}
-
-.StaticRanges__label:hover {
-  background-color: var(--background_highlighted, rgb(0 0 0 / 8%));
-}
-
-.StaticRanges__item {
-  list-style: none;
-  cursor: pointer;
-  padding: 0;
-}
-.StaticRanges__radio {
-  display: none;
-}
-.StaticRanges__label {
-  display: -ms-flexbox;
-  display: flex;    
-  font-size: 12.5px;
-  color: #2a5885;
-  position: relative;
-  padding: 7px 20px 7px 27px;
-  cursor: inherit;
-}
-.rdrCalendarWrapper {   
+.DP__rdrCalendarWrapper {   
   width: 100%; 
   font-size: 12px;
 }
@@ -107,8 +76,8 @@
   -ms-flex-align: center;
   align-items: center;
 }
-.Panel__arrow--minus,
-.Panel__arrow--plus {
+.DP__Panel__arrow--minus,
+.DP__Panel__arrow--plus {
   position: absolute;
   bottom: -43px;
   padding: 20px 25px;
@@ -122,51 +91,45 @@
   outline: none;
 }
 
-.DatePicker--mobi .Panel__arrow--minus,
-.DatePicker--mobi .Panel__arrow--plus{
+.DatePicker--mobi .DP__Panel__arrow--minus,
+.DatePicker--mobi .DP__Panel__arrow--plus{
   background-size: 80%;
 }
-.Panel__arrow--minus {
+.DP__Panel__arrow--minus {
   left: 0px;
   background-image: url(../img/arrow-left.svg);        
 }
-.Panel__arrow--plus {
+.DP__Panel__arrow--plus {
   right: 0px;  
   background-image: url(../img/arrow-rigth.svg);
 }
-.Panel__arrow--minus:hover,
-.Panel__arrow--plus:hover {
+.DP__Panel__arrow--minus:hover,
+.DP__Panel__arrow--plus:hover {
   opacity: 1;
 }
-.Inputs {
+.DP__Inputs {
   width: 100%;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-align: center;
   align-items: center;
 }
-.Inputs__label {
-  color: var(-background_light, #ebecef);
-  margin-right: 10px;
-  font-size: 12.5px;
-}
 
-.Inputs__input {
-  width: 100%;
-  margin: 0 5px;
+.DP__Inputs__input {
+  width: 100%; 
 }
-.Inputs__delimiter {
+.DP__Inputs__delimiter {
   display: inline-block;
   width: 14px;
   height: 1px;
   background: var(--text_primary, #000);
 }
-.rdrMonthsHorizontal {
+.DP__rdrMonthsHorizontal {
   -ms-flex-direction: row;
   flex-direction: row;
 }
 
-.rdrMonths {
+.DP__rdrMonths {
   display: -ms-flexbox;
   display: flex;
   justify-content: center;
@@ -176,23 +139,23 @@
   margin-right: 20px;
 } */
 
-.rdrMonth {
+.DP__rdrMonth {
   width: 100%;
 }
-.rdrMonthName {
+.DP__rdrMonthName {
   font-weight: 500;   
   text-align: center;
   margin-bottom: 12px;
   color: var(--text_primary, #000)
 }
-.DatePicker .rdrMonthName{
+.DatePicker .DP__rdrMonthName{
   font-size: 14px; 
 }
-.DatePicker--mobi .rdrMonthName{
+.DatePicker--mobi .DP__rdrMonthName{
   font-size: 18px; 
 }
 
-.rdrWeekDays {
+.DP__rdrWeekDays {
   display: -ms-flexbox;
   display: flex;
   margin-bottom: 4px;
@@ -200,25 +163,25 @@
   color: var(--text_primary, #000)
 }
 
-.DatePicker--mobi .rdrWeekDays{
+.DatePicker--mobi .DP__rdrWeekDays{
   font-size: 13px;
   font-weight: 900;
   opacity: 0.4;
 }
 
-.rdrWeekDay {
+.DP__rdrWeekDay {
   -ms-flex-preferred-size: calc(14.28571429%);
   flex-basis: calc(14.28571429%);
   box-sizing: inherit;
   text-align: center;    
 }
-.rdrDays,
-.rdrDay {
+.DP__rdrDays,
+.DP__rdrDay {
   -o-transition: color;
   transition: color;    
 }
 
-.rdrDays {
+.DP__rdrDays {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
@@ -226,13 +189,13 @@
   font-size: 12px;
 }
 
-.DatePicker--mobi .rdrDays{
+.DatePicker--mobi .DP__rdrDays{
   font-size: 14px;
 }
-.rdrDayPassive {
+.DP__rdrDayPassive {
   visibility: hidden;
 }
-.rdrDay {
+.DP__rdrDay {
   background: var(--background_content, #fff);
   box-sizing: inherit;
   width: calc(14.28571429%);
@@ -242,7 +205,7 @@
   cursor: pointer;
   outline: none;
 }
-.rdrDay {
+.DP__rdrDay {
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -252,18 +215,18 @@
   text-align: center;
   height: 32px;
 }
-.DatePicker--mobi .rdrDay{
+.DatePicker--mobi .DP__rdrDay{
   height: 54px;
 }
 
-.rdrDay:hover {
+.DP__rdrDay:hover {
   background-color: var(--background_highlighted, rgb(0 0 0 / 8%));
 }
-.rdrDayToday .rdrDayNumber span {
+.DP__rdrDayToday .DP__rdrDayNumber span {
   font-weight: 600;
   color: var(--accent, #5181b8);    
 }
-.rdrDayNumber {
+.DP__rdrDayNumber {
   outline: 0;
   font-weight: 300;
   position: absolute;
@@ -279,34 +242,34 @@
   justify-content: center;
   color: var(--text_primary, #000);
 }
-.rdrDayNumber span {    
+.DP__rdrDayNumber span {    
   font-weight: 400;
 }
-.rdrDayDisabled span {
+.DP__rdrDayDisabled span {
   color: #b2b2b2;
 }
-.rdrEndEdge,
-.rdrInRange,
-.rdrSelected,
-.rdrStartEdge,
-.rdrDayEndPreview,
-.rdrDayInPreview,
-.rdrDayStartPreview {
+.DP__rdrEndEdge,
+.DP__rdrInRange,
+.DP__rdrSelected,
+.DP__rdrStartEdge,
+.DP__rdrDayEndPreview,
+.DP__rdrDayInPreview,
+.DP__rdrDayStartPreview {
   background-color: var(--background_highlighted, rgb(0 0 0 / 8%));
   display: block;
   height: 100%;
 }
-.rdrDayEndPreview,
-.rdrDayStartPreview,
-.rdrDay:hover .rdrInRange {
+.DP__rdrDayEndPreview,
+.DP__rdrDayStartPreview,
+.DP__rdrDay:hover .DP__rdrInRange {
   background-color: var(--background_highlighted, rgb(0 0 0 / 8%));
 }
-.rdrEndEdge,
-.rdrStartEdge {
+.DP__rdrEndEdge,
+.DP__rdrStartEdge {
   background-color: var(--accent, #5181b8);
 }
-.rdrEndEdge ~ .rdrDayNumber span,
-.rdrStartEdge ~ .rdrDayNumber span {
+.DP__rdrEndEdge ~ .DP__rdrDayNumber span,
+.DP__rdrStartEdge ~ .DP__rdrDayNumber span {
   color: var(--background_content, #fff);
 }
 .DatePicker__footer {
@@ -328,7 +291,7 @@
 }
 
 /* vkui change for my props isMobi=false */
-.DatePicker .Input__el{
+.DatePicker .DP__Input__el{
   height: auto;
   padding: 6px 12px;
   font-size: 14px;
@@ -347,7 +310,7 @@
 
 /* Button css */
 
-.Button {
+.DP__Button {
   position: relative;
   display: inline-block;
   box-sizing: border-box;
@@ -360,7 +323,7 @@
   cursor: pointer;
   }
 
-.Button__hoverShadow{
+.DP__Button__hoverShadow{
   position: absolute;
   top: 0;
   right: 0;
@@ -371,184 +334,136 @@
   border-radius: inherit;
   
 }
-.Button:hover .Button__hoverShadow{
+.DP__Button:hover .DP__Button__hoverShadow{
   background: var(--background_hover, rgb(0 0 0 / 4%));
 }
 
-  .Button__in {
+  .DP__Button__in {
     display: flex;
     align-items: center;
     }
 
-  .Button__before:not(:last-child) {
+  .DP__Button__before:not(:last-child) {
     margin-left: -4px;
     }
 
 
-.Button[disabled] {
+.DP__Button[disabled] {
   opacity: .4;
   }
 
 
-  .Button--aln-center .Button__in {
+  .DP__Button--aln-center .DP__Button__in {
     justify-content: center;
     text-align: center;
     }
 
 
-.Button--str {
+.DP__Button--str {
   display: block;
   width: 100%;
   flex-grow: 1;
   flex-basis: 0;
   }
 
-  .Button--str .Button__in {
+  .DP__Button--str .DP__Button__in {
     justify-content: center;
     }
 
-.Button--lvl-primary {
+.DP__Button--lvl-primary {
   background-color: var(--button_primary_background, #4986cc);
   color: var(--button_primary_foreground, #fff);
   }
 
-.Button--lvl-secondary {
+.DP__Button--lvl-secondary {
   background-color: var(--button_secondary_background, rgb(0 28 61 / 5%));
   color: var(--button_secondary_foreground, #3f8ae0);
   }
 
-.Button--sz-s {
+.DP__Button--sz-s {
   min-height: 30px;
   padding: 0 15px;
   font-size: 13px;
   }
 
-  .Button--sz-s .Button__before:not(:last-child) {
+  .DP__Button--sz-s .DP__Button__before:not(:last-child) {
     margin-right: 6px;
     }
 
-  .Button--sz-s .Button__after:not(:first-child) {
+  .DP__Button--sz-s .DP__Button__after:not(:first-child) {
     margin-left: 6px;
     }
 
-  .Button--sz-s .Button__content {
+  .DP__Button--sz-s .DP__Button__content {
     padding: 4px 0 6px;
     }
 
-  .Button--sz-s .Button__content--caps {
+  .DP__Button--sz-s .DP__Button__content--caps {
     padding: 7px 0;
     }
 
-.Button--sz-m {
+.DP__Button--sz-m {
   padding: 0 15px;
   min-height: 36px;
   font-size: 15px;
   }
 
-  .Button--sz-m .Button__before:not(:last-child) {
+  .DP__Button--sz-m .DP__Button__before:not(:last-child) {
     margin-right: 6px;
     }
 
-  .Button--sz-m .Button__after:not(:first-child) {
+  .DP__Button--sz-m .DP__Button__after:not(:first-child) {
     margin-left: 6px;
     }
 
-  .Button--sz-m .Button__content {
+  .DP__Button--sz-m .DP__Button__content {
     padding: 6px 0 8px;
     }
 
-.Button--sz-l {
+.DP__Button--sz-l {
   padding: 0 19px;
   min-height: 44px;
   }
 
-  .Button--sz-l .Button__before:not(:last-child) {
+  .DP__Button--sz-l .DP__Button__before:not(:last-child) {
     margin-right: 8px;
     }
 
-  .Button--sz-l .Button__after:not(:first-child) {
+  .DP__Button--sz-l .DP__Button__after:not(:first-child) {
     margin-left: 8px;
     }
 
-  .Button--sz-l .Button__in {
+  .DP__Button--sz-l .DP__Button__in {
     justify-content: center;
     }
 
-/*
-  iOS
- */
-.Button--ios {
+.DP__Button--ios {
   border-radius: 10px;
 }
 
-.Button--ios.Button--sz-l .Button__content {
+.DP__Button--ios.Button--sz-l .DP__Button__content {
   padding: 9px 0 11px;
 }
 
-/*
-  Android
- */
-.Button--android {
+.DP__Button--android {
   border-radius: 8px;
 }
 
-.Button--android.Button--sz-l .Button__content {
+.DP__Button--android .DP__Button--sz-l .DP__Button__content {
   padding: 10px 0 12px;
 }
 
-/*
-  VKCOM
-*/
-.Button--vkcom {
-  border-radius: 4px;
-}
-
-/*
-  sizeY = Compact
-*/
-/* small size */
-.Button--sizeY-compact.Button--sz-s {
-  min-height: 26px;
-}
-
-.Button--sizeY-compact.Button--sz-s .Button__content {
-  padding-top: 3px;
-  padding-bottom: 5px;
-}
-
-.Button--sizeY-compact.Button--sz-s .Button__content--caps {
-  padding: 5px 0;
-}
-
-/* medium size */
-.Button--sizeY-compact.Button--sz-m {
-  min-height: 32px;
-}
-
-.Button--sizeY-compact.Button--sz-m .Button__content {
-  padding-top: 4px;
-  padding-bottom: 6px;
-}
-
-/* large size */
-.Button--sizeY-compact.Button--sz-l {
-  min-height: 36px;
-}
-
-.Button--sizeY-compact.Button--sz-l .Button__content {
-  padding-top: 6px;
-  padding-bottom: 8px;
-}
 
 /* Input css */
 
-.FormField {
+.DP__FormField {
   position: relative;
   box-sizing: border-box;
   padding: 1px;
+  margin: 0 5px;
 }
 
-.FormField__border {
+.DP__FormField__border {
   position: absolute;
   left: 0;
   top: 0;
@@ -563,24 +478,24 @@
   transform-origin: left top;
 }
 
-.Input .Input__el:not(:disabled) ~ .FormField__border--hover{
+.DP__Input .DP__Input__el:not(:disabled) ~ .DP__FormField__border--hover{
   border-color: var(--icon_tertiary_alpha, rgb(0 0 0 / 24%));
 }
 
-.FormField--android {
+.DP__FormField--android {
   border-radius: 8px;
 }
 
-.FormField > * {
+.DP__FormField > * {
   border-radius: inherit;
 }
 
-.Input .Input__el:disabled ~ .FormField__border{
+.DP__Input .DP__Input__el:disabled ~ .DP__FormField__border{
   opacity: .4;
 }
 
 @media (min-resolution: 2dppx) {
-  .FormField--ios .FormField__border {
+  .DP__FormField--ios .DP__FormField__border {
     border-radius: 20px;
     transform: scale(.5);
     width: 200%;
@@ -589,7 +504,7 @@
 }
 
 @media (min-resolution: 3dppx) {
-  .FormField--ios .FormField__border {
+  .DP__FormField--ios .DP__FormField__border {
     border-radius: 31.25px;
     transform: scale(.32);
     width: 312.5%;
@@ -597,28 +512,28 @@
   }
 }
 
-.FormField.Input .Input__el:focus ~ .FormField__border {
+.DP__FormField .DP__Input .DP__Input__el:focus ~ .DP__FormField__border {
   border-color: var(--accent, #3f8ae0);
   background: var(--field_background, #f2f3f5);
 }
 
 
 
-.Input {
+.DP__Input {
   position: relative;
   line-height: 19px;
   font-size: 16px;
   }
 
-.Input--center .Input__el {
+.DP__Input--center .DP__Input__el {
   text-align: center;
   }
 
-.Input--right .Input__el {
+.DP__Input--right .DP__Input__el {
   text-align: right;
   }
 
-.Input__el {
+.DP__Input__el {
   margin: 0;
   width: 100%;
   display: block;
@@ -638,7 +553,7 @@
   background: transparent;
   }
 
-.Input--sizeY-compact .Input__el {
+.DP__Input--sizeY-compact .DP__Input__el {
   height: 34px;
   padding-top: 9px;
   padding-bottom: 9px;
@@ -646,15 +561,15 @@
   font-size: 15px;
 }
 
-.Input__el:disabled {
+.DP__Input__el:disabled {
   opacity: .4;
 }
 
-.Input__el::placeholder {
+.DP__Input__el::placeholder {
   color: var(--field_text_placeholder, #818c99);
 }
 
-.Input__el:disabled::placeholder {
+.DP__Input__el:disabled::placeholder {
   color: var(--text_secondary, #818c99);
 }
 

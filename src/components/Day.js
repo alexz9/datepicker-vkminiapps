@@ -7,11 +7,11 @@ class Day extends React.Component {
     return (
       <button 
         type="button" 
-        className={`rdrDay ${passive ? "rdrDayPassive" : isToday ? "rdrDayToday" : ""}`}
+        className={`DP__rdrDay ${passive ? "DP__rdrDayPassive" : isToday ? "DP__rdrDayToday" : ""}`}
         onClick={() => this.props.onClick(value, month, year)} 
       >
-        <span className={status === "start" ? "rdrStartEdge" : status === "end" ? "rdrEndEdge" : status === "inRange" ? "rdrInRange" : null}></span>
-        <span className="rdrDayNumber">
+        <span className={status === "start" ? "DP__rdrStartEdge" : status === "end" ? "DP__rdrEndEdge" : status === "inRange" ? "DP__rdrInRange" : null}></span>
+        <span className="DP__rdrDayNumber">
           <span>{value}</span>
         </span>
       </button>

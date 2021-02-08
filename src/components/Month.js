@@ -9,18 +9,18 @@ class Month extends React.Component {
   render() {
     const calendar = getCalendar(this.props.step, this.props.startDate, this.props.endDate);
     return (
-      <div className="rdrMonth">
-        <div className="rdrMonthName">{`${MONTH_FULL_NAMES[calendar.month]} ${calendar.year}`}</div>
-        <div className="rdrWeekDays">
-          <span className="rdrWeekDay">пн</span>
-          <span className="rdrWeekDay">вт</span>
-          <span className="rdrWeekDay">ср</span>
-          <span className="rdrWeekDay">чт</span>
-          <span className="rdrWeekDay">пт</span>
-          <span className="rdrWeekDay">сб</span>
-          <span className="rdrWeekDay">вс</span>
+      <div className="DP__rdrMonth">
+        <div className="DP__rdrMonthName">{`${MONTH_FULL_NAMES[calendar.month]} ${calendar.year}`}</div>
+        <div className="DP__rdrWeekDays">
+          <span className="DP__rdrWeekDay">пн</span>
+          <span className="DP__rdrWeekDay">вт</span>
+          <span className="DP__rdrWeekDay">ср</span>
+          <span className="DP__rdrWeekDay">чт</span>
+          <span className="DP__rdrWeekDay">пт</span>
+          <span className="DP__rdrWeekDay">сб</span>
+          <span className="DP__rdrWeekDay">вс</span>
         </div>
-        <div className="rdrDays">
+        <div className="DP__rdrDays">
           {calendar.days.map((item, i)=>
             <Day 
               key={i} 

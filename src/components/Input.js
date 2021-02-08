@@ -2,9 +2,9 @@ import React from 'react';
 
 const Input = (props) => {
   return (
-    <div className="FormField FormField--android Input Input--android Inputs__input Input--sizeY-regular">
-      <input {...props} className="Input__el"/>
-      <div className="FormField__border"></div>
+    <div className="DP__FormField DP__FormField--android DP__Input DP__Input--android DP__Inputs__input DP__Input--sizeY-regular">
+      <input {...props} className="DP__Input__el"/>
+      <div className="DP__FormField__border"></div>
     </div>
   );
 }

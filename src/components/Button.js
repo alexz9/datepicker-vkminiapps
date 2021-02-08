@@ -14,23 +14,22 @@ const Button = (props) => {
   return (
     <button
       className={`
-        Button 
-        Button--android 
-        Button--sz-${sizes.includes(size) ? size : this.defaultProps.size}
-        Button--lvl-${modes.includes(mode) ? mode : this.defaultProps.mode}
-        Button--aln-center         
-        ${Boolean(after || before) && "Button--with-icon"} 
-        ${Boolean(stretched) && "Button--str"} 
-        `}
-      //className={Object.keys(this.state.buttonClasses).join(" ")}
+      DP__Button 
+      DP__Button--android 
+      DP__Button--sz-${sizes.includes(size) ? size : this.defaultProps.size}
+      DP__Button--lvl-${modes.includes(mode) ? mode : this.defaultProps.mode}
+      DP__Button--aln-center         
+      ${Boolean(after || before) && "DP__Button--with-icon"} 
+      ${Boolean(stretched) && "DP__Button--str"} 
+      `}
       onClick={handleClick}
     >
-      <div className="Button__in">
-        {before && <div className="Button__before">{before}</div>}
+      <div className="DP__Button__in">
+        {before && <div className="DP__Button__before">{before}</div>}
         <div>{children}</div>
-        {after && <div className="Button__after">{after}</div>}
+        {after && <div className="DP__Button__after">{after}</div>}
       </div>
-      <span className="Button__hoverShadow"></span>
+      <span className="DP__Button__hoverShadow"></span>
     </button>
   );
 

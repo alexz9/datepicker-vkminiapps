@@ -99,21 +99,21 @@ class Calendar extends React.Component {
         className={`DatePicker${this.props.isMobi ? "--mobi" : ""}`} 
         ref={this.refContainer}
       >
-        <div className="rdrCalendarWrapper rdrDateDateWrapper">
+        <div className="DP__rdrCalendarWrapper DP__rdrDateDateWrapper">
           <div className="DatePicker__panel">
-            <button type="button" className="Panel__arrow--minus" onClick={() => this.setState({ stepMonth: this.state.stepMonth - 1 })}></button>
-            <div className="Inputs">
-              <Input type="text" className="Inputs__input" value={this.state.startDateInput} name="startDateInput" onChange={this.changeInput} placeholder="дд.мм.гггг" />
+            <button type="button" className="DP__Panel__arrow--minus" onClick={() => this.setState({ stepMonth: this.state.stepMonth - 1 })}></button>
+            <div className="DP__Inputs">
+              <Input type="text" className="DP__Inputs__input" value={this.state.startDateInput} name="startDateInput" onChange={this.changeInput} placeholder="дд.мм.гггг" />
               {this.props.isRange &&
                 <React.Fragment>
-                  <span className="Inputs__delimiter"></span>
-                  <Input type="text" className="Inputs__input" value={this.state.endDateInput} name="endDateInput" onChange={this.changeInput} placeholder="дд.мм.гггг" />
+                  <span className="DP__Inputs__delimiter"></span>
+                  <Input type="text" className="DP__Inputs__input" value={this.state.endDateInput} name="endDateInput" onChange={this.changeInput} placeholder="дд.мм.гггг" />
                 </React.Fragment>
               }
             </div>
-            <button type="button" className="Panel__arrow--plus" onClick={() => this.setState({ stepMonth: this.state.stepMonth + 1 })}></button>
+            <button type="button" className="DP__Panel__arrow--plus" onClick={() => this.setState({ stepMonth: this.state.stepMonth + 1 })}></button>
           </div>
-          <div className="rdrMonths rdrMonthsHorizontal">
+          <div className="DP__rdrMonths DP__rdrMonthsHorizontal">
             <Month
               step={this.state.stepMonth}
               startDate={this.state.startDate}

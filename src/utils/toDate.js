@@ -4,8 +4,12 @@ function toDate(arg){
   // если аргумент объект даты, возвращаем её клон
   if(arg instanceof Date || argStr === '[object Date]') return new Date(arg.getTime());
 
-  // если аргумент число, принимаем его за unixtime (миллисекунды) и возвращаем объект даты
-  if(typeof arg === 'number' || argStr === '[object Number]') return new Date(arg);
+  // если аргумент число, принимаем его за unixtime (секунды приводит к миллисекундам) и возвращаем объект даты
+  if(typeof arg === 'number' || argStr === '[object Number]'){
+    let date = arg;
+    if(date.toString().length <= 10) date *= 1000;
+    return new Date(date);
+  }
 
   // если аргумент строка вида dd.mm.yyyy
   if(typeof arg === 'string'){
