@@ -103,11 +103,27 @@ class Calendar extends React.Component {
           <div className="DatePicker__panel">
             <button type="button" className="DP__Panel__arrow--minus" onClick={() => this.setState({ stepMonth: this.state.stepMonth - 1 })}></button>
             <div className="DP__Inputs">
-              <Input type="text" className="DP__Inputs__input" value={this.state.startDateInput} name="startDateInput" onChange={this.changeInput} placeholder="дд.мм.гггг" />
+              <Input 
+                type="text" 
+                className="DP__Inputs__input" 
+                value={this.state.startDateInput} 
+                name="startDateInput" 
+                onChange={this.changeInput} 
+                placeholder="дд.мм.гггг" 
+                isMobi={this.props.isMobi}
+              />
               {this.props.isRange &&
                 <React.Fragment>
                   <span className="DP__Inputs__delimiter"></span>
-                  <Input type="text" className="DP__Inputs__input" value={this.state.endDateInput} name="endDateInput" onChange={this.changeInput} placeholder="дд.мм.гггг" />
+                  <Input 
+                    type="text" 
+                    className="DP__Inputs__input" 
+                    value={this.state.endDateInput} 
+                    name="endDateInput" 
+                    onChange={this.changeInput} 
+                    placeholder="дд.мм.гггг" 
+                    isMobi={this.props.isMobi}
+                  />
                 </React.Fragment>
               }
             </div>

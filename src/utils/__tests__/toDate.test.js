@@ -1,4 +1,4 @@
-import toDate from './toDate';
+import toDate from '../toDate';
 
 describe("toDate", ()=>{
   test("should be instanceof Date", ()=>{

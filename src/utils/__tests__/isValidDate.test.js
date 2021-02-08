@@ -1,4 +1,4 @@
-import isValidDate from './isValidDate';
+import isValidDate from '../isValidDate';
 
 describe("isValidDate", ()=>{
   test("should be truthy", ()=>{

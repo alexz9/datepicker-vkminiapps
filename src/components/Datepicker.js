@@ -1,5 +1,5 @@
 import React from 'react';
-//import '@vkontakte/vkui/dist/vkui.css';
+import '@vkontakte/vkui/dist/vkui.css';
 import IconCalendar from './IconCalendar';
 
 import Button from './Button';

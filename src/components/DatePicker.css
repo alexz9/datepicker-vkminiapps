@@ -494,30 +494,10 @@
   opacity: .4;
 }
 
-@media (min-resolution: 2dppx) {
-  .DP__FormField--ios .DP__FormField__border {
-    border-radius: 20px;
-    transform: scale(.5);
-    width: 200%;
-    height: 200%;
-  }
-}
-
-@media (min-resolution: 3dppx) {
-  .DP__FormField--ios .DP__FormField__border {
-    border-radius: 31.25px;
-    transform: scale(.32);
-    width: 312.5%;
-    height: 312.5%;
-  }
-}
-
 .DP__FormField .DP__Input .DP__Input__el:focus ~ .DP__FormField__border {
   border-color: var(--accent, #3f8ae0);
   background: var(--field_background, #f2f3f5);
 }
-
-
 
 .DP__Input {
   position: relative;
@@ -533,7 +513,8 @@
   text-align: right;
   }
 
-.DP__Input__el {
+.DP__Input__el--s, 
+.DP__Input__el--m {
   margin: 0;
   width: 100%;
   display: block;
@@ -543,7 +524,6 @@
   outline: none;
   appearance: none;
   text-overflow: ellipsis;
-  height: 42px;
   line-height: 19px;
   font-size: 16px;
   color: var(--text_primary, #000);
@@ -552,7 +532,10 @@
   z-index: 2;
   background: transparent;
   }
-
+  .DP__Input__el--s{
+    padding: 6px 12px;
+    font-size: 13px;
+  }
 .DP__Input--sizeY-compact .DP__Input__el {
   height: 34px;
   padding-top: 9px;

@@ -1,4 +1,4 @@
-import getMonthForCalendar from './getMonthForCalendar';
+import getMonthForCalendar from '../getMonthForCalendar';
 
 describe("getMonthForCalendar", ()=>{
   let nowMonth, nowYear;

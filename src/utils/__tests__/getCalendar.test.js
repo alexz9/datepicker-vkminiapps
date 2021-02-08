@@ -1,4 +1,4 @@
-import getCalendar from './getCalendar';
+import getCalendar from '../getCalendar';
 
 describe("getCalendar", ()=>{
   test("should be a valid object structure", ()=>{
