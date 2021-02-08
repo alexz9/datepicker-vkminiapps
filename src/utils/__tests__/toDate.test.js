@@ -24,7 +24,7 @@ describe("toDate", ()=>{
   test("should be correct Date", ()=>{
     const now = new Date();
     expect(toDate(now)).toEqual(now);
-    expect(toDate(123455)).toEqual(new Date(123455));
+    expect(toDate(123455)).toEqual(new Date(123455000));
     expect(toDate(0)).toEqual(new Date(0));
     expect(toDate("12.02.2021")).toEqual(new Date(2021, 1, 12));
   });
