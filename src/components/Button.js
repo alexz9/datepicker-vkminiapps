@@ -11,17 +11,21 @@ const Button = (props) => {
 
   const { size, mode, before, after, stretched, children } = props;
 
+  const classNames = [
+    "DP__Button",
+    "DP__Button--android",
+    `DP__Button--sz-${sizes.includes(size) ? size : this.defaultProps.size}`,
+    `DP__Button--lvl-${modes.includes(mode) ? mode : this.defaultProps.mode}`,
+    "DP__Button--aln-center",         
+    `${Boolean(after || before) ? "DP__Button--with-icon" : null}`, 
+    `${Boolean(stretched) ? "DP__Button--str" : null}`
+  ]
+  .filter(item => Boolean(item))
+  .join(" ");
+
   return (
     <button
-      className={`
-      DP__Button 
-      DP__Button--android 
-      DP__Button--sz-${sizes.includes(size) ? size : this.defaultProps.size}
-      DP__Button--lvl-${modes.includes(mode) ? mode : this.defaultProps.mode}
-      DP__Button--aln-center         
-      ${Boolean(after || before) && "DP__Button--with-icon"} 
-      ${Boolean(stretched) && "DP__Button--str"} 
-      `}
+      className={classNames}
       onClick={handleClick}
     >
       <div className="DP__Button__in">

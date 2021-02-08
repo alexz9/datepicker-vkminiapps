@@ -38,7 +38,7 @@
 }
 
 .DatePicker, .DatePicker--mobi {  
-  position: absolute;
+  position: fixed;
   display: -ms-flexbox;
   display: flex;   
   flex-wrap: wrap;
@@ -133,11 +133,8 @@
   display: -ms-flexbox;
   display: flex;
   justify-content: center;
-  margin: 14px 12px 12px;
+  padding: 14px 12px 3px;
 }
-/* .rdrMonth:first-of-type {
-  margin-right: 20px;
-} */
 
 .DP__rdrMonth {
   width: 100%;
@@ -305,7 +302,7 @@
   right: 0;
   background: #000;
   opacity: 0.8;
-  z-index: 9;
+  z-index: 10;
 }
 
 /* Button css */
