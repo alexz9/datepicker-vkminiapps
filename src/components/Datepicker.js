@@ -1,5 +1,5 @@
 import React from 'react';
-import '@vkontakte/vkui/dist/vkui.css';
+//import '@vkontakte/vkui/dist/vkui.css';
 import IconCalendar from './IconCalendar';
 
 import Button from './Button';
@@ -19,17 +19,17 @@ class DatePicker extends React.Component {
   }
 
   render() {
-    const { value, isRange } = this.props,
+    const { value, isRange, isMobi } = this.props,
       startDate = isRange && value && typeof value === 'object' && isValidDate(value.start) ? toDate(value.start) : !isRange && isValidDate(value) ? toDate(value) :  null,
       endDate = isRange && value && typeof value === 'object' && isValidDate(value.end) ? toDate(value.end) : null;
 
     return (
-      <div className="DatePicker__container" theme={this.props.theme}>
+      <div className="DatePicker__container" theme={this.props.theme} style={{position: !isMobi && "relative"}}>
         <Button 
           mode="secondary" 
-          size="s" 
+          size={isMobi ? "m" : "s"} 
           onClick={()=>this.setState({isOpen: true})} 
-          before={<IconCalendar/>} 
+          before={<IconCalendar size={isMobi ? "m" : "s"}/>} 
         >
           {startDate && endDate 
             ? `${startDate.getDate()} ${MONTH_NAMES[startDate.getMonth()]} - ${endDate.getDate()} ${MONTH_NAMES[endDate.getMonth()]}` 
@@ -37,6 +37,7 @@ class DatePicker extends React.Component {
             ? `${startDate.getDate()} ${MONTH_NAMES[startDate.getMonth()]} ${startDate.getFullYear()}`
             : 'Бессрочно' }
         </Button>
+        {this.state.isOpen && this.props.isMobi && <div className="DatePicker__wrapper"/>}
         {this.state.isOpen &&
           <Calendar 
             onClose={()=>this.setState({isOpen: false})}

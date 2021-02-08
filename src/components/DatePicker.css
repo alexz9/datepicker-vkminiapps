@@ -1,4 +1,4 @@
-:root .DatePicker__container[theme="dark"]{
+.DatePicker__container[theme="dark"]{
   --background_light: #232324;
   --background_content: #19191a;
   --background_highlighted: rgba(255, 255, 255, 0.08);
@@ -15,7 +15,7 @@
   --icon_tertiary_alpha: rgba(255, 255, 255, 0.24);
   --field_text_placeholder: #76787a;
 }
-:root .DatePicker__container[theme="light"]{
+.DatePicker__container[theme="light"]{
   --background_light: #f9f9f9;
   --background_content: #fff;  
   --background_highlighted: rgba(0, 0, 0, 0.08);
@@ -31,6 +31,10 @@
   --field_background: #f2f3f5;
   --icon_tertiary_alpha: rgba(0, 0, 0, 0.24);
   --field_text_placeholder: #818c99;
+}
+
+.DatePicker__container{
+  z-index: 10;
 }
 
 .DatePicker, .DatePicker--mobi {  
@@ -329,3 +333,15 @@
   padding: 6px 12px;
   font-size: 14px;
 }
+
+.DatePicker__wrapper{
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: #000;
+  opacity: 0.8;
+  z-index: 9;
+}
+

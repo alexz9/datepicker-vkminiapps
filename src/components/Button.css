@@ -10,6 +10,7 @@
   user-select: none;
   cursor: pointer;
   }
+
 .Button__hoverShadow{
   position: absolute;
   top: 0;
@@ -70,6 +71,7 @@
 .Button--sz-s {
   min-height: 30px;
   padding: 0 15px;
+  font-size: 13px;
   }
 
   .Button--sz-s .Button__before:not(:last-child) {
@@ -91,6 +93,7 @@
 .Button--sz-m {
   padding: 0 15px;
   min-height: 36px;
+  font-size: 15px;
   }
 
   .Button--sz-m .Button__before:not(:last-child) {
