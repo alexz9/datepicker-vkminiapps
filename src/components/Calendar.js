@@ -71,9 +71,9 @@ class Calendar extends React.Component {
     const { startDate, endDate } = this.state;
     if (!infinity && (!startDate || !endDate)) return;
 
-    if (infinity) this.props.onChange(null);
-    else if (startDate > endDate) this.props.onChange({ start: endDate, end: startDate });
-    else this.props.onChange({ start: startDate, end: endDate });
+    if (infinity && this.props.hasInfinity) this.props.onChange(null);
+    else if (!infinity && startDate > endDate) this.props.onChange({ start: endDate, end: startDate });
+    else if (!infinity) this.props.onChange({ start: startDate, end: endDate });
 
     this.props.onClose();
   }
@@ -111,7 +111,7 @@ class Calendar extends React.Component {
                 onChange={this.changeInput} 
                 placeholder="дд.мм.гггг" 
                 isMobi={this.props.isMobi}
-                autocomplete="off"
+                autoComplete="off"
               />
               {this.props.isRange &&
                 <React.Fragment>
@@ -124,7 +124,7 @@ class Calendar extends React.Component {
                     onChange={this.changeInput} 
                     placeholder="дд.мм.гггг" 
                     isMobi={this.props.isMobi}
-                    autocomplete="off"
+                    autoComplete="off"
                   />
                 </React.Fragment>
               }
@@ -142,8 +142,22 @@ class Calendar extends React.Component {
         </div>
         {this.props.isRange &&
           <div className="DatePicker__footer">
-            <Button mode="secondary" size={this.props.isMobi ? "m" : "s"} stretched onClick={() => this.onChange(true)}>Бессрочно</Button>
-            <Button mode="primary" size={this.props.isMobi ? "m" : "s"} stretched onClick={() => this.onChange()}>Применить</Button>
+            <Button 
+              mode="secondary" 
+              size={this.props.isMobi ? "m" : "s"} 
+              stretched 
+              onClick={() => this.onChange(true)}
+            >
+              {this.props.hasInfinity ? "Бессрочно" : "Отменить"}
+            </Button>
+            <Button 
+              mode="primary" 
+              size={this.props.isMobi ? "m" : "s"} 
+              stretched 
+              onClick={() => this.onChange()}
+            >
+              Применить
+            </Button>
           </div>
         }
       </div>

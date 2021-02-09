@@ -18,12 +18,13 @@ class DatePicker extends React.Component {
   }
 
   render() {
-    const { value, isRange, isMobi } = this.props,
+    const { isOpen } = this.state;
+    const { value, isRange, isMobi, theme, hasInfinity, onChange } = this.props,
       startDate = isRange && value && typeof value === 'object' && isValidDate(value.start) ? toDate(value.start) : !isRange && isValidDate(value) ? toDate(value) :  null,
       endDate = isRange && value && typeof value === 'object' && isValidDate(value.end) ? toDate(value.end) : null;
 
     return (
-      <div className="DatePicker__container" theme={this.props.theme} style={{position: !isMobi && "relative"}}>
+      <div className="DatePicker__container" theme={theme} style={{position: !isMobi && "relative"}}>
         <Button 
           mode="secondary" 
           size={isMobi ? "m" : "s"} 
@@ -36,15 +37,16 @@ class DatePicker extends React.Component {
             ? `${startDate.getDate()} ${MONTH_NAMES[startDate.getMonth()]} ${startDate.getFullYear()}`
             : 'Бессрочно' }
         </Button>
-        {this.state.isOpen && isMobi && <div className="DatePicker__wrapper"/>}
-        {this.state.isOpen &&
+        {isOpen && isMobi && <div className="DatePicker__wrapper"/>}
+        {isOpen &&
           <Calendar 
             onClose={()=>this.setState({isOpen: false})}
             startDate={startDate}
             endDate={endDate}
-            onChange={this.props.onChange}
+            onChange={onChange}
             isMobi={isMobi}
             isRange={isRange}
+            hasInfinity={hasInfinity}
           />
         }
       </div>
